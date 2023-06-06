@@ -1,0 +1,33 @@
+{
+    "name": "agrobens/sdk-php-b3",
+    "description": "SDK php8 das APIs B3",
+    "keywords": ["api", "library", "psr-4", "b3", "sdk"],
+    "homepage": "https://github.com/agrobens/sdk-php-b3",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Weslley Ceresa",
+            "email": "weslley.ceresa@agrobens.com",
+            "homepage": "https://www.agrobens.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7",
+        "spatie/array-to-xml": "^2.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "B3\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": []
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "victorjonsson/markdowndocs": "^1.3"
+    }
+}
