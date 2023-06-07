@@ -28,6 +28,12 @@ class B3Token {
         }
     }
     
+    public function isValid(){
+        $now = strtotime(date('Y-m-d H:i:s'));
+        $expires = strtotime($this->expires);
+        return $expires > $now;
+    }
+    
     public function getAccess_token() {
         return $this->access_token;
     }
