@@ -23,7 +23,12 @@ class B3Token {
         $json = @json_decode($stringJson);
         if($json){
             foreach($json as $key => $value){
-                $this->$key = $value;
+                if($key == 'expires_in'){
+                    $this->setExpires_in($value);
+                }
+                else{
+                    $this->$key = $value;
+                }
             }
         }
     }
