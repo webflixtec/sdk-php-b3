@@ -72,7 +72,7 @@ class B3Token {
     public function setExpires_in($expires_in) {
         $this->expires_in = $expires_in;
         
-        $now = now() + $expires_in;
+        $now = \time() + $expires_in;
         $this->expires = date('Y-m-d H:i:s', $now);
         
         return $this;
