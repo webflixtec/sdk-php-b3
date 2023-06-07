@@ -60,11 +60,10 @@ class B3Token {
 
     public function setExpires_in($expires_in) {
         $this->expires_in = $expires_in;
-        return $this;
-    }
-
-    public function setExpires($expires) {
-        $this->expires = $expires;
+        
+        $now = now() + $expires_in;
+        $this->expires = date('Y-m-d H:i:s', $now);
+        
         return $this;
     }
 
