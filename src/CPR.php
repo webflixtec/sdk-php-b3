@@ -33,16 +33,19 @@ class CPR extends B3Http{
             return json_decode($body);
             
         } catch (ServerException $ex) {
+            $body = (string)$ex->getResponse()->getBody();
             
-            throw B3Exception::fromObjectMessage('[ServerException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+            throw B3Exception::fromObjectMessage('[ServerException] ' . $body . ' - ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
                         
         } catch (ClientException $ex) {
+            $body = (string)$ex->getResponse()->getBody();
             
-            throw B3Exception::fromObjectMessage('[ClientException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+            throw B3Exception::fromObjectMessage('[ClientException] ' . $body . ' - ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
             
         } catch (BadResponseException $ex) {
+            $body = (string)$ex->getResponse()->getBody();
             
-            throw B3Exception::fromObjectMessage('[BadResponseException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+            throw B3Exception::fromObjectMessage('[BadResponseException] ' . $body . ' - ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
             
         } catch (Exception $ex) {
             throw new B3Exception($ex);
@@ -65,16 +68,19 @@ class CPR extends B3Http{
             return json_decode($body);
             
         } catch (ServerException $ex) {
+            $body = (string)$ex->getResponse()->getBody();
             
-            throw B3Exception::fromObjectMessage('[ServerException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+            throw B3Exception::fromObjectMessage('[ServerException] ' . $body . ' - ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
                         
         } catch (ClientException $ex) {
+            $body = (string)$ex->getResponse()->getBody();
             
-            throw B3Exception::fromObjectMessage('[ClientException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+            throw B3Exception::fromObjectMessage('[ClientException] ' . $body . ' - ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
             
         } catch (BadResponseException $ex) {
+            $body = (string)$ex->getResponse()->getBody();
             
-            throw B3Exception::fromObjectMessage('[BadResponseException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+            throw B3Exception::fromObjectMessage('[BadResponseException] ' . $body . ' - ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
             
         } catch (Exception $ex) {
             throw new B3Exception($ex);
