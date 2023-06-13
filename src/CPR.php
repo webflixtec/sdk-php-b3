@@ -57,6 +57,7 @@ class CPR extends B3Http{
                 ],
                 'cert' => $this->controller->getCert(),
                 'ssl_key' => $this->controller->getSslKey(),
+                'json' => $data
             ]);
 
             $body = (string)$response->getBody();
