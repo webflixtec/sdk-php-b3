@@ -20,7 +20,7 @@ class CPR extends B3Http{
     
     public function detalhes($id){
         try{
-            $response = $this->http->get('pipeline/b3/v1/cpr/instruments/' . $id, [
+            $response = $this->http->get('pipeline/b3/v2/cpr/instruments/' . $id, [
                 'headers' => [
                     'Authorization' => $this->controller->getAuthorization(),
                 ],
@@ -54,7 +54,7 @@ class CPR extends B3Http{
     
     public function registrar(array $data){
         try{
-            $response = $this->http->post('pipeline/b3/v1/cpr/instruments', [
+            $response = $this->http->post('pipeline/b3/v2/cpr/instruments', [
                 'headers' => [
                     'Authorization' => $this->controller->getAuthorization(),
                 ],
